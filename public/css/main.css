@@ -1,0 +1,425 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+@font-face {
+    font-family: 'BebasRegular';
+    src: url('../font/BEBAS___-webfont.eot');
+    src: url('../font/BEBAS___-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../font/BEBAS___-webfont.woff') format('woff'),
+        url('../font/BEBAS___-webfont.ttf') format('truetype'),
+        url('../font/BEBAS___-webfont.svg#BebasRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KomikaAxisRegular';
+    src: url('../font/KOMIKAX_-webfont.eot');
+    src: url('../font/KOMIKAX_-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../font/KOMIKAX_-webfont.woff') format('woff'),
+        url('../font/KOMIKAX_-webfont.ttf') format('truetype'),
+        url('../font/KOMIKAX_-webfont.svg#KomikaAxisRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    background: url('/img/monsters-background.png') no-repeat center bottom fixed,
+    url('/img/pattern.png') repeat;
+    background-size: cover, auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+#header h1 {
+    font: bold 38px/38px 'KomikaAxisRegular' arial, sans-serif;
+    color: #000000;
+    text-shadow: 2px 2px 2px #FFFFFF;
+    margin: 0;
+}
+
+#header h2 {
+    font: bold 22px/22px 'BebasRegular' arial, sans-serif;
+    color: #000000;
+    text-shadow: 2px 2px 2px #FFFFFF;
+    margin: 2px 0 0;
+}
+
+#header div.span6 {
+    position: relative;
+}
+
+#mobile-logout {
+    display: none;
+}
+
+#wall {
+    overflow: hidden;
+    height: 690px;
+}
+
+#scrollable-wall {
+    height: 690px;
+    margin: 15px 0 0;
+    overflow-y: scroll;
+}
+
+.message {
+    max-width: 550px;
+    height: 80px;
+    margin: 0 0 15px 0;
+    padding: 10px;
+    position: relative;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.9);
+    color: #000000;
+}
+
+.message .share {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    padding: 2px;
+    background-color: #EFEFEF;
+    border-radius: 5px;
+}
+
+.message .share:hover {
+    cursor: pointer;
+}
+
+.message .share ul {
+    overflow: hidden;
+    display: none;
+    margin: 0;
+    padding: 0;
+    height: 68px;
+}
+
+.message .share ul li {
+    margin: 5px;
+    float: left;;
+    list-style-type: none;
+}
+
+.message .avatar {
+    width: 70px;
+    float: left;
+}
+
+.message .avatar img {
+    max-width: 100%;
+}
+
+.message .message-content {
+    float: left;
+    width: 400px;
+    margin-left: 10px;
+}
+
+.message .user-name,
+.message .date {
+    color: #0099CC;
+    font-size: 12px;
+    margin-top: 0;
+}
+
+.message .date {
+    text-align: center;
+}
+
+.message a {
+    color: #0099CC;
+    text-decoration: none;
+}
+
+.message a:hover {
+    color: #0099CC;
+    text-decoration: underline;
+}
+
+.message p {
+    width: 100%;
+    max-width: 100%;
+    font-size: 13px;
+}
+
+#nickname {
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+}
+
+#nickname input {
+    margin: 0;
+}
+
+#nickname div {
+    border-radius: 5px;
+    background-color: #EDEDED;
+}
+
+#nickname div h3 {
+    font-family: 'KomikaAxisRegular';
+    text-shadow: 2px 2px 2px #FFFFFF;
+}
+
+img#loading {
+    display: block;
+    margin: 5px auto;
+}
+
+#editor {
+    position: absolute;
+    bottom: 0;
+}
+
+#text-editor {
+    width: 380px;
+    height: 65px;
+    margin: 10px 0;
+    padding: 5px;
+    background-color: #FFFFFF;
+}
+
+#controls {
+    width: 140px;
+    height: 65px;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 62px;
+    right: 0;
+    background-color: rgba(255,255,255,0.9);
+}
+
+#controls span {
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#logout {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+#avatar {
+    width: 60px;
+    height: 60px;
+}
+
+span.warning {
+    font-size: 16px;
+    color: red;
+    font-weight: bold;
+}
+
+@media only screen and (max-height: 900px) { 
+    #header h1 {
+        font: bold 32px/32px 'KomikaAxisRegular' arial, sans-serif;
+    }
+
+    #header h2 {
+        font: bold 22px/22px 'BebasRegular' arial, sans-serif;
+    }
+
+    #wall, #scrollable-wall {
+        height: 490px;
+    }
+
+    .message {
+        height: 70px;
+        padding: 5px;
+    }
+}
+
+@media only screen and (max-height: 768px) { 
+    #header h1 {
+        font: bold 28px/28px 'KomikaAxisRegular' arial, sans-serif;
+    }
+
+    #header h2 {
+        font: bold 18px/18px 'BebasRegular' arial, sans-serif;
+    }
+
+    #wall, #scrollable-wall {
+        height: 380px;
+    }
+
+    .message {
+        height: 70px;
+        padding: 5px;
+    }
+
+    #nickname div.span6{
+        width: 560px;
+    }
+
+    #nickname h3{
+        font: bold 22px/24px 'KomikaAxisRegular' arial, sans-serif;
+    }
+
+    #controls {
+        right: 10px;
+    }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) { 
+    #header h1 {
+        font: bold 32px/32px 'KomikaAxisRegular' arial, sans-serif;
+    }
+
+    #header h2 {
+        font: bold 22px/22px 'BebasRegular' arial, sans-serif;
+    }
+
+    #wall, #scrollable-wall {
+        height: 390px;
+    }
+
+    .message {
+        height: 70px;
+        padding: 5px;
+    }
+
+    .message .message-content {
+        width: 300px;
+    }
+
+    .message .message-content p {
+        width: 300px;
+        font-size: 12px;
+        line-height: 1.1em;
+    }
+
+    #nickname {
+        top: 15px;
+        position: relative;
+    }
+
+    #nickname div h3 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    #text-editor {
+        width: 280px;
+    }
+
+    #controls {
+        right: 0;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+      #header h1 {
+        font: bold 28px/28px 'KomikaAxisRegular' arial, sans-serif;
+    }
+
+    #header h2 {
+        font: bold 24px/24px 'BebasRegular' arial, sans-serif;
+    }
+
+    #wall, #scrollable-wall {
+        height: 420px;
+    }
+
+    .message {
+        padding: 5px
+    }
+
+    .message .share {
+        display: none;
+    }
+
+    .message .message-content {
+        width: 220px;
+    }
+
+    .message .message-content p {
+        font-size: 12px;
+        line-height: 1.2em;
+    }
+
+    #nickname {
+        top: 15px;
+        position: relative;
+    }
+
+    #nickname form {
+        padding: 5px;
+    }
+
+    #text-editor {
+        width: 280px;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    #header h1 {
+        font: bold 22px/22px 'KomikaAxisRegular' arial, sans-serif;
+    }
+
+    #header h2 {
+        font: bold 18px/18px 'BebasRegular' arial, sans-serif;
+    }
+
+    #mobile-logout {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    .message {
+        height: 65px;
+    }
+
+    .message .share {
+        display: none;
+    }
+
+    .message .user-name, .message .date {
+        font-size: 11px;
+    }
+
+    .message .avatar img {
+        width: 50px;
+    }
+
+    .message .message-content {
+        width: 190px;
+        margin: 0;
+    }
+
+    .message .message-content p {
+        font-size: 11px;
+        line-height: 1.1em;
+    }
+
+    #nickname div.span6 {
+        width: 300px;
+    }
+
+    #nickname form {
+        padding: 5px;
+    }
+
+    #text-editor {
+        width: 320px;
+    }
+
+    #controls {
+        display: none;
+    }
+}

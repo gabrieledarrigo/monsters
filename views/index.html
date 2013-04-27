@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>What Monsters Sayngs</title>
+        <meta name="author" content="Gabriele D'Arrigo - @acirdesign">
+        <meta name="description" content="What Monsters Sayngs - A real time monstrous application">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css" type="text/css"/>
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <div id="wrapper" class="container">
+            <div id="header" class="row">
+                <div class="span6 offset3 pagination-centered">
+                    <hgroup>
+                        <h2>What</h2>
+                        <h1>Monsters</h1>
+                        <h1>Sayngs</h1>
+                    </hgroup>
+                </div>
+
+                <div id="mobile-logout" class="btn btn-important btn-mini" data-bind="click: logout">
+                    <strong>logout</strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="wall"  class="span6 offset3" >
+                    <div id="scrollable-wall" class="row"
+                    data-bind="event: {scroll : checkScroll},
+                                style: {width: checkWidth() + 'px'}, 
+                                foreach: messageList">
+
+                        <div class="message">
+                            <div class="share" title="Share Me!"
+                             data-bind="click: $parent.showSocial">
+
+                                <span>
+                                    <img src="/img/share.png" title="Share!"/>
+                                </span>
+
+                                <ul>
+                                    <li>
+                                        <a href="http://twitter.com/share" class="socialite twitter-share" data-text="Socialite.js" data-url="http://monsters.jit.su" data-count="vertical" data-hashtags="monsters" rel="nofollow" target="_blank"
+                                        data-bind="attr: {'data-text' : message}">
+                                            <span class="vhidden">Share on Twitter</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="avatar">
+                                <img data-bind="attr: {src: _user.avatar}"/> 
+                            </div>
+
+                            <div class="message-content">
+                                <span class="user-name" data-bind="text: _user.nickname"></span>
+                                    -
+                                <span class="date" data-bind="text: date"></span>
+                                <p data-bind="text: message">
+
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div> 
+
+            <div id="nickname" class="row" data-bind="visible: userPanelIsVisible">
+                <span class="label label-important" data-bind="visible: warningMesaggeIsVisible, text: warningMessage"></span>
+                <div class="span6 offset3">
+                    <h3>
+                        Choose your nickname
+                    </h3>
+                    <form>
+                        <input type="text" name="nickname" placeholder="Choose your nickname" required="required" data-bind="value: user.nickname"/>
+
+                        <button class="btn btn-primary" data-bind="click: login">Ok</button>
+                    </form>
+                </div>
+            </div> 
+
+            <div class="row">
+                <div class="span6 offset3">
+                    <img src="/img/ajax-loader.gif" id="loading" class="page-centered"/>
+                </div>
+            </div>
+
+            <div id="editor" class="row" data-bind="visible: editorIsVisible">
+                <div class="span6 offset3">
+                    <span class="label" data-bind="text : charactersCount, css: { 'label-important': charactersCount() <= 0 }">120</span>
+
+                    <strong class="label label-important" data-bind="visible: warningMesaggeIsVisible, text: warningMessage"></strong>
+                    
+                    <form>
+                        <textarea id="text-editor" name="text-editor" required="required" placeholder="Wanna Say Something?" 
+                                  data-bind="value: message, valueUpdate: 'afterkeydown', event: {afterkeydown : checkMessage}">
+                        </textarea>
+
+                        <button class="btn btn-primary btn-block" data-bind="click: emitMessage">
+                            Say Something
+                        </button>
+                    </form>
+
+                    <div id="controls" data-bind="visible: editorIsVisible">
+                        <span data-bind="text: user.nickname"></span>
+                        
+                        <div id="logout" class="btn btn-important" data-bind="click: logout">
+                            logout
+                        </div>
+
+                        <div id="avatar">
+                            <img  data-bind="attr: {src : user.avatar }"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="//knockoutjs.com/downloads/knockout-2.2.1.js"></script>
+        <script src="/js/vendor/socialite.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/main.js"></script>
+    </body>
+</html>
