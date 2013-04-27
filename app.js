@@ -22,7 +22,7 @@ io.sockets.on('connection', function(socket) {
         var message = new model.message({
             _user     : data._user._id,
             message   : data.message,
-            date      :data.date,
+            date      : data.date,
             timestamp : data.timestamp
         });
 
@@ -30,7 +30,7 @@ io.sockets.on('connection', function(socket) {
             if (error) throw error;
 
             model.user.findById(data._user._id, function(error, user) {
-                if (error) return next(error);
+                if (error) throw error;
                 user.messages.push(message);
 
                 user.save(function (error) {
