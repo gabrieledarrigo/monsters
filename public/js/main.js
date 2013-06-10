@@ -1,4 +1,4 @@
-var socket = io.connect('http://monsters.jit.su' || 'http://localhost');
+var socket = io.connect('http://monsters.nodeapps.io' || 'http://localhost');
 
 var messageViewModel = function() {
     var self = this;
