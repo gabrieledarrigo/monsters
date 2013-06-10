@@ -85,7 +85,6 @@ var messageViewModel = function() {
     };
 
     self.login = function () {
-        console.log(self.user.nickname().length);
         if(self.user.nickname().length === 0) {
             self.setWarningMessage(true, 'Choose a nickname');
             return false;
